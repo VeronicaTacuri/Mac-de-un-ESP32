@@ -1,0 +1,10 @@
+import network
+
+# Crear una interfaz de red para WiFi
+wlan = network.WLAN(network.STA_IF)
+
+# Obtener la dirección MAC
+mac_address = wlan.config('mac')
+
+# Mostrar la dirección MAC
+print("Dirección MAC del ESP32:", ':'.join('%02x' % b for b in mac_address))
